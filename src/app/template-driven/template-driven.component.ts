@@ -32,8 +32,10 @@ export class TemplateDrivenComponent {
   // Search Value
   searchVal: string;
 
-  // Mobile Number Validation
+  // Validation Pattern
   mobNumberPattern = "^((\\+91-?)|0)?[0-9]{10}$";
+  adharPattern = "/^([0-9]{4}[0-9]{4}[0-9]{4}$)|([0-9]{4}\s[0-9]{4}\s[0-9]{4}$)|([0-9]{4}-[0-9]{4}-[0-9]{4}$)/";
+  pancardPattern = "/^([A-Z]){5}([0-9]){4}([A-Z]){1}$/";
 
   constructor(private _crud: CrudTempletDrivenService, private modalService: NgbModal) { }
 

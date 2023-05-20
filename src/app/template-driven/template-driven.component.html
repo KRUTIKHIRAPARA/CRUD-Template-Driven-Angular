@@ -200,16 +200,17 @@
             <div class="col-md-4">
                 <mat-form-field class="w-100">
                     <mat-label>Adhar-Card No</mat-label>
-                    <input type="text" matInput #adharno="ngModel" adharno required
+                    <input type="text" matInput #adharno="ngModel"adharno required
                         [(ngModel)]="getDatas.pernalDetails.adharNo" minlength="12" maxlength="12" onlyNumber>
                 </mat-form-field>
             </div>
             <div class="col-md-4">
                 <mat-form-field class="w-100">
                     <mat-label>Pan No</mat-label>
-                    <input matInput #panno="ngModel" panno required [(ngModel)]="getDatas.pernalDetails.panNo"
-                        minlength="10" maxlength="10">
+                    <input type="text" matInput #panno="ngModel"panno required
+                        [(ngModel)]="getDatas.pernalDetails.panNo">
                 </mat-form-field>
+                
             </div>
             <div class="col-md-4">
                 <mat-form-field class="w-100">
@@ -219,6 +220,7 @@
                 </mat-form-field>
             </div>
         </div>
+        <!-- BWJPK1234A -->
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-outline-dark" (click)="dismissDetail()"
