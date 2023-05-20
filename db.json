@@ -1,0 +1,43 @@
+{
+  "bankdetails": [
+    {
+      "address": {
+        "city": "Juanagadh",
+        "blockNo": "1",
+        "currentAddress": "Hyderabad"
+      },
+      "pernalDetails": {
+        "adharNo": "78945612305",
+        "panNo": "897465123654",
+        "passbookNo": "8974651320"
+      },
+      "companyName": "Brand",
+      "email": "bd@gmail.com",
+      "mobileNo": "9876543210",
+      "fName": "Jatin",
+      "lName": "Patel",
+      "salary": "120000",
+      "id": 2
+    },
+    {
+      "address": {
+        "city": "Juanagadh",
+        "blockNo": "1",
+        "currentAddress": "Hyderabad"
+      },
+      "pernalDetails": {
+        "adharNo": "78945612305",
+        "panNo": "897465123654",
+        "passbookNo": "8974651320"
+      },
+      "companyName": "Brand",
+      "email": "bd@gmail.com",
+      "mobileNo": "9876543210",
+      "fName": "Jatin",
+      "lName": "Patel",
+      "salary": "120000",
+      "id": 3
+    }
+
+  ]
+}
