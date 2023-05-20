@@ -12,7 +12,8 @@
                 <!-- Pages Body -->
             </ul>
             <form class="d-flex">
-                <input class="form-control me-2" type="search" name="search"  [(ngModel)]="searchVal" (keyup)="searchDeatil()" placeholder="Search" aria-label="Search">
+                <input class="form-control me-2" type="search" name="search" [(ngModel)]="searchVal"
+                    (keyup)="searchDeatil()" placeholder="Search" aria-label="Search">
             </form>
         </div>
     </div>
@@ -111,7 +112,8 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
 
-    <mat-paginator (click)="pagenations()" [pageSizeOptions]="[5, 10, 20, 30, 40, 50]" showFirstLastButtons   aria-label="Select page of periodic elements">
+    <mat-paginator (click)="pagenations()" [pageSizeOptions]="[5, 10, 20, 30, 40, 50]" showFirstLastButtons
+        aria-label="Select page of periodic elements">
     </mat-paginator>
 </div>
 
@@ -122,14 +124,15 @@
 <ng-template #content let-modal>
     <div class="modal-header">
         <h4 class="modal-title" id="modal-basic-title">Prsonal Details</h4>
-        <button type="button" class="btn-close" aria-label="Close" (click)="dismissDetail()" (click)="modal.dismiss('Cross click')"></button>
+        <button type="button" class="btn-close" aria-label="Close" (click)="dismissDetail()"
+            (click)="modal.dismiss('Cross click')"></button>
     </div>
     <div class="modal-body">
         <div class="row">
             <div class="col-md-12">
                 <mat-form-field class="w-100">
                     <mat-label>Company Name</mat-label>
-                    <input matInput [(ngModel)]="getDatas.companyName">
+                    <input matInput #cname="ngModel" cname required [(ngModel)]="getDatas.companyName">
                 </mat-form-field>
             </div>
         </div>
@@ -137,13 +140,13 @@
             <div class="col-md-6">
                 <mat-form-field class="w-100">
                     <mat-label>First Name</mat-label>
-                    <input matInput [(ngModel)]="getDatas.fName">
+                    <input matInput #fname="ngModel" fname required [(ngModel)]="getDatas.fName">
                 </mat-form-field>
             </div>
             <div class="col-md-6">
                 <mat-form-field class="w-100">
                     <mat-label>Last Name</mat-label>
-                    <input matInput [(ngModel)]="getDatas.lName">
+                    <input matInput #lname="ngModel" lname required [(ngModel)]="getDatas.lName" pattern="^[a-zA-Z]+$">
                 </mat-form-field>
             </div>
         </div>
@@ -151,13 +154,15 @@
             <div class="col-md-6">
                 <mat-form-field class="w-100">
                     <mat-label>Email</mat-label>
-                    <input matInput [(ngModel)]="getDatas.email">
+                    <input matInput #email="ngModel" required email [(ngModel)]="getDatas.email">
+
                 </mat-form-field>
             </div>
             <div class="col-md-6">
                 <mat-form-field class="w-100">
                     <mat-label>Mobile No</mat-label>
-                    <input matInput [(ngModel)]="getDatas.mobileNo">
+                    <input type="text" onlyNumber [pattern]="mobNumberPattern" matInput #mobile="ngModel" mobile
+                        required [(ngModel)]="getDatas.mobileNo" minlength="10" maxlength="10">
                 </mat-form-field>
             </div>
         </div>
@@ -165,19 +170,20 @@
             <div class="col-md-4">
                 <mat-form-field class="w-100">
                     <mat-label>Block No</mat-label>
-                    <input matInput [(ngModel)]="getDatas.address.blockNo">
+                    <input matInput #blno="ngModel" blno required [(ngModel)]="getDatas.address.blockNo" minlength="1"
+                        maxlength="5">
                 </mat-form-field>
             </div>
             <div class="col-md-4">
                 <mat-form-field class="w-100">
                     <mat-label>Address</mat-label>
-                    <input matInput [(ngModel)]="getDatas.address.currentAddress">
+                    <input matInput #address="ngModel" address required [(ngModel)]="getDatas.address.currentAddress">
                 </mat-form-field>
             </div>
             <div class="col-md-4">
                 <mat-form-field class="w-100">
                     <mat-label>City</mat-label>
-                    <input matInput [(ngModel)]="getDatas.address.city">
+                    <input matInput #city="ngModel" city required [(ngModel)]="getDatas.address.city">
                 </mat-form-field>
             </div>
         </div>
@@ -185,7 +191,8 @@
             <div class="col-md-12">
                 <mat-form-field class="w-100">
                     <mat-label>Salary</mat-label>
-                    <input matInput [(ngModel)]="getDatas.salary">
+                    <input type="number" matInput #salary="ngModel" salary required [(ngModel)]="getDatas.salary"
+                        minlength="10" maxlength="10" onlyNumber>
                 </mat-form-field>
             </div>
         </div>
@@ -193,28 +200,32 @@
             <div class="col-md-4">
                 <mat-form-field class="w-100">
                     <mat-label>Adhar-Card No</mat-label>
-                    <input matInput [(ngModel)]="getDatas.pernalDetails.adharNo">
+                    <input type="text" matInput #adharno="ngModel" adharno required
+                        [(ngModel)]="getDatas.pernalDetails.adharNo" minlength="12" maxlength="12" onlyNumber>
                 </mat-form-field>
             </div>
             <div class="col-md-4">
                 <mat-form-field class="w-100">
                     <mat-label>Pan No</mat-label>
-                    <input matInput [(ngModel)]="getDatas.pernalDetails.panNo">
+                    <input matInput #panno="ngModel" panno required [(ngModel)]="getDatas.pernalDetails.panNo"
+                        minlength="10" maxlength="10">
                 </mat-form-field>
             </div>
             <div class="col-md-4">
                 <mat-form-field class="w-100">
                     <mat-label>Passboook No</mat-label>
-                    <input matInput [(ngModel)]="getDatas.pernalDetails.passbookNo">
+                    <input type="text" matInput #passbookno="ngModel" passbookno required
+                        [(ngModel)]="getDatas.pernalDetails.passbookNo" minlength="9" maxlength="18" onlyNumber>
                 </mat-form-field>
             </div>
         </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="dismissDetail()" (click)="modal.dismiss('Cross click')">Cancle</button>
+        <button type="button" class="btn btn-outline-dark" (click)="dismissDetail()"
+            (click)="modal.dismiss('Cross click')">Cancle</button>
 
         <button type="button" class="btn btn-outline-dark" (click)="btnUDToogle ? addDetail(): updateDetail()"
-            (click)="modal.close()">{{ btnUDToogle ? 'Add': 'Update' }}</button>
+            (click)="dismissDetail()" (click)="modal.close()">{{ btnUDToogle ? 'Add': 'Update' }}</button>
     </div>
 </ng-template>
 

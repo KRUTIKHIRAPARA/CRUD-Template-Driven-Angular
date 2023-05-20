@@ -27,10 +27,13 @@ export class TemplateDrivenComponent {
   getDatas: Datas;
 
   // Update & Add Button Toggle
-  btnUDToogle: boolean = true; 
+  btnUDToogle: boolean = true;
 
   // Search Value
-  searchVal:string;
+  searchVal: string;
+
+  // Mobile Number Validation
+  mobNumberPattern = "^((\\+91-?)|0)?[0-9]{10}$";
 
   constructor(private _crud: CrudTempletDrivenService, private modalService: NgbModal) { }
 
@@ -46,7 +49,7 @@ export class TemplateDrivenComponent {
   }
 
   // Pagenations Methods
-  pagenations(){
+  pagenations() {
     this.dataSource.paginator = this.paginator;
   }
 
@@ -71,27 +74,30 @@ export class TemplateDrivenComponent {
 
   // Add Data In API Method
   addDetail() {
-    this._crud.addData(this.getDatas).subscribe({
-      next: (res) => {
-        this.getDatas = new Datas;
-        this.getDatas.address = new Addressing;
-        this.getDatas.pernalDetails = new PersonalData;
-        this.getDetail();
-      },
-      error: (err) => {
-        console.log(err);
-      }
-    });
+    if (this.getDatas.fName && this.getDatas.lName && this.getDatas.email && this.getDatas.mobileNo && this.getDatas.address.city && this.getDatas.address.blockNo && this.getDatas.address.currentAddress && this.getDatas.salary && this.getDatas.pernalDetails.adharNo && this.getDatas.pernalDetails.panNo && this.getDatas.pernalDetails.passbookNo) {
+      this._crud.addData(this.getDatas).subscribe({
+        next: (res) => {
+          this.getDatas = new Datas;
+          this.getDatas.address = new Addressing;
+          this.getDatas.pernalDetails = new PersonalData;
+          this.getDetail();
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      });
+    }
+
   }
 
   // Fill Data In Edit Model
-  fillDetail(data){
+  fillDetail(data) {
     this.getDatas = data;
     this.btnUDToogle = false;
   }
 
   // Dismiss Details
-  dismissDetail(){
+  dismissDetail() {
     this.getDatas = new Datas;
     this.getDatas.address = new Addressing;
     this.getDatas.pernalDetails = new PersonalData;
@@ -99,23 +105,25 @@ export class TemplateDrivenComponent {
   }
 
   // Update Data In API Method
-  updateDetail(){
-    this._crud.editData(this.getDatas).subscribe({
-      next: (res) => {
-        this.getDatas = new Datas;
-        this.getDatas.address = new Addressing;
-        this.getDatas.pernalDetails = new PersonalData;
-        this.btnUDToogle = true;
-        this.getDetail();
-      },
-      error: (err) => {
-        console.log(err);
-      }
-    });
+  updateDetail() {
+    if (this.getDatas.fName && this.getDatas.lName && this.getDatas.email && this.getDatas.mobileNo && this.getDatas.address.city && this.getDatas.address.blockNo && this.getDatas.address.currentAddress && this.getDatas.salary && this.getDatas.pernalDetails.adharNo && this.getDatas.pernalDetails.panNo && this.getDatas.pernalDetails.passbookNo) {
+      this._crud.editData(this.getDatas).subscribe({
+        next: (res) => {
+          this.getDatas = new Datas;
+          this.getDatas.address = new Addressing;
+          this.getDatas.pernalDetails = new PersonalData;
+          this.btnUDToogle = true;
+          this.getDetail();
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      });
+    }
   }
 
   // Delete Data In API Method
-  deleteDetail(body){
+  deleteDetail(body) {
     this._crud.deleteData(body).subscribe({
       next: (res) => {
         this.getDatas = new Datas;
