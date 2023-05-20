@@ -2,28 +2,28 @@
   "bankdetails": [
     {
       "address": {
-        "city": "Juanagadh",
-        "blockNo": "1",
-        "currentAddress": "Hyderabad"
+        "city": "Ahmedabad",
+        "blockNo": "45",
+        "currentAddress": "near main road"
       },
       "pernalDetails": {
-        "adharNo": "78945612305",
-        "panNo": "897465123654",
-        "passbookNo": "8974651320"
+        "adharNo": "6534568778",
+        "panNo": "657567657657",
+        "passbookNo": "758624555"
       },
       "companyName": "Brand",
       "email": "bd@gmail.com",
       "mobileNo": "9876543210",
       "fName": "Jatin",
-      "lName": "Patel",
+      "lName": "Donga",
       "salary": "120000",
       "id": 2
     },
     {
       "address": {
-        "city": "Juanagadh",
+        "city": "Surat",
         "blockNo": "1",
-        "currentAddress": "Hyderabad"
+        "currentAddress": "vanjari"
       },
       "pernalDetails": {
         "adharNo": "78945612305",
@@ -37,7 +37,46 @@
       "lName": "Patel",
       "salary": "120000",
       "id": 3
+    },
+    {
+      "address": {},
+      "pernalDetails": {
+        "passbookNo": "sasa"
+      },
+      "id": 4
+    },
+    {
+      "address": {
+        "currentAddress": "assa"
+      },
+      "pernalDetails": {},
+      "id": 5
+    },
+    {
+      "address": {},
+      "pernalDetails": {},
+      "email": "assa",
+      "companyName": "asasa",
+      "lName": "asasasas",
+      "id": 6
+    },
+    {
+      "address": {},
+      "pernalDetails": {},
+      "companyName": "asasas",
+      "id": 7
+    },
+    {
+      "address": {},
+      "pernalDetails": {},
+      "email": "asasasas",
+      "id": 8
+    },
+    {
+      "address": {},
+      "pernalDetails": {},
+      "salary": "asasasa",
+      "id": 9
     }
-
   ]
 }
